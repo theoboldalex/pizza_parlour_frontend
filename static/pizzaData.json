@@ -71,5 +71,20 @@
         ],
         "description": "Named after a legend. An instant classic.",
         "imageUrl": "img/pizza5.jpg"
+    },
+    {
+        "_id": "6",
+        "name": "Signori",
+        "price": 10.99,
+        "isVegetarian": true,
+        "heatScore": 1,
+        "toppings": [
+            "mozzarella",
+            "red onion",
+            "sweetcorn",
+            "mushroom"
+        ],
+        "description": "A farmhouse special. Just like Mamma makes it.",
+        "imageUrl": "img/pizza11.jpg"
     }
 ]

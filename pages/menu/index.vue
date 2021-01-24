@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <CustomiseModal v-if="modalIsVisible" />
     <h1 class="hero-text text-red-500 text-shadow-lg page-heading text-center">
       Pizza<span
         class="ml-4 hero-text text-blue-400 text-shadow-lg page-heading"
@@ -19,7 +20,7 @@ import { mapState } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["data"])
+    ...mapState(["data", "modalIsVisible"])
   }
 };
 </script>
@@ -27,5 +28,7 @@ export default {
 <style scoped>
 .wrapper {
   min-height: 90vh;
+  display: grid;
+  place-items: center;
 }
 </style>
