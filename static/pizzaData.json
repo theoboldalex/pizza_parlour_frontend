@@ -1,0 +1,60 @@
+[
+    {
+        "_id": "1",
+        "name": "Trappatoni",
+        "price": 9.99,
+        "isVegetarian": true,
+        "heatScore": 2,
+        "toppings": [
+            "mozzarella",
+            "olives",
+            "mushrooms"
+        ],
+        "description": "A zingy tasty vegetarian special.",
+        "imageUrl": "img/pizza1.jpg"
+    },
+    {
+        "_id": "2",
+        "name": "Ravanelli",
+        "price": 12.99,
+        "isVegetarian": false,
+        "heatScore": 3,
+        "toppings": [
+            "mozzarella",
+            "pepperoni",
+            "jalapenos"
+        ],
+        "description": "¡Ay Caramba! This special is turning up the heat!",
+        "imageUrl": "img/pizza2.jpg"
+    },
+    {
+        "_id": "3",
+        "name": "Chiesa",
+        "price": 10.99,
+        "isVegetarian": false,
+        "heatScore": 1,
+        "toppings": [
+            "mozzarella",
+            "chicken",
+            "bacon",
+            "sweetcorn"
+        ],
+        "description": "Farmhouse vibes on this smooth special!",
+        "imageUrl": "img/pizza3.jpg"
+    },
+    {
+        "_id": "4",
+        "name": "Pagliuca",
+        "price": 11.99,
+        "isVegetarian": true,
+        "heatScore": 2,
+        "toppings": [
+            "mozzarella",
+            "onions",
+            "jalapenos",
+            "olives"
+        ],
+        "description": "Roasted Meditteranean Vegetables and smooth creamy mozzarella.",
+        "imageUrl": "img/pizza4.jpg"
+    }
+]
