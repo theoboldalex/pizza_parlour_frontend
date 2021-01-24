@@ -56,5 +56,20 @@
         ],
         "description": "Roasted Meditteranean Vegetables and smooth creamy mozzarella.",
         "imageUrl": "img/pizza4.jpg"
+    },
+    {
+        "_id": "5",
+        "name": "Maldini",
+        "price": 12.99,
+        "isVegetarian": false,
+        "heatScore": 1,
+        "toppings": [
+            "mozzarella",
+            "green peppers",
+            "salami",
+            "pesto"
+        ],
+        "description": "Named after a legend. An instant classic.",
+        "imageUrl": "img/pizza5.jpg"
     }
 ]

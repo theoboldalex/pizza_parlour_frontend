@@ -12,16 +12,9 @@
       <h4 class="text-sm text-black opacity-50 font-light">
         £{{ data.price }}
       </h4>
-      <div class="flex-col">
-        <i class="fas fa-leaf text-green-500"></i>
-        <div class="flex">
-          <i class="fas fa-pepper-hot text-red-500"></i>
-          <i class="fas fa-pepper-hot text-red-500"></i>
-          <i class="fas fa-pepper-hot text-black opacity-25"></i>
-        </div>
-      </div>
+      <Scores :data="data" />
       <button
-        class="w-full transition duration-500 ease-in-out bg-red-500 hover:bg-red-600 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
+        class="w-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-500 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
       >
         Customise Pizza
       </button>

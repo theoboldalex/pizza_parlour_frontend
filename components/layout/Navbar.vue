@@ -21,7 +21,7 @@
     <transition name="fade">
       <div
         v-if="menuIsOpen"
-        class="py-4 px-2 absolute bg-white w-full shadow md:px-20"
+        class="py-4 px-2 absolute bg-white w-full shadow md:px-20 z-50"
       >
         <ul>
           <li class="font-semibold px-4 py-2 my-2 hover:bg-gray-200 rounded-lg">
@@ -39,7 +39,16 @@
               to="/menu"
               class="block"
             >
-              Menu
+              Pizzas
+            </NuxtLink>
+          </li>
+          <li class="font-semibold px-4 py-2 my-2 hover:bg-gray-200 rounded-lg">
+            <NuxtLink
+              @click.native="menuIsOpen = !menuIsOpen"
+              to="/cart"
+              class="block"
+            >
+              Cart
             </NuxtLink>
           </li>
         </ul>
