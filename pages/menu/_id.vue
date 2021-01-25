@@ -7,9 +7,12 @@
         class="w-full rounded-xl shadow-lg"
       />
     </div>
-    <div class="sm:w-6/12 border flex-col">
-      <h1 class="text-3xl bangers text-center">{{ pizza.name }}</h1>
+    <div class="sm:w-6/12 flex-col">
+      <h1 class="text-4xl bangers text-center py-4">{{ pizza.name }}</h1>
       <p class="text-xl font-light text-center">{{ pizza.description }}</p>
+
+      <h1 class="text-2xl font-bold text-center py-2">£{{ pizza.price }}</h1>
+      <CustomiseForm />
     </div>
   </div>
 </template>

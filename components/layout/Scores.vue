@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col">
+  <div>
     <i
       class="fas fa-leaf"
       :class="data.isVegetarian ? 'text-green-500' : 'text-black opacity-25'"
