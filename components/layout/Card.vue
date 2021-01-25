@@ -2,7 +2,7 @@
   <div class="border rounded-lg shadow-sm">
     <div class="overflow-hidden rounded-t-lg">
       <img
-        :src="require(`@/static/${data.imageUrl}`)"
+        :src="require(`~/static/${data.imageUrl}`)"
         :alt="data.description"
         class="rounded-t-lg shadow transform hover:scale-110 transition duration-1000 ease"
       />

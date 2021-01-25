@@ -9,6 +9,4 @@ export const mutations = {};
 
 export const actions = {};
 
-export const getters = {
-  getPizzaById: state => id => state.data.filter(el => el._id === id)
-};
+export const getters = {};

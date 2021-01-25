@@ -3,7 +3,7 @@
         "_id": "1",
         "name": "Trappatoni",
         "price": 9.99,
-        "isVegetarian": true,
+        "isVegetarian": false,
         "heatScore": 2,
         "toppings": [
             "mozzarella",
@@ -17,7 +17,7 @@
         "_id": "2",
         "name": "Ravanelli",
         "price": 12.99,
-        "isVegetarian": false,
+        "isVegetarian": true,
         "heatScore": 3,
         "toppings": [
             "mozzarella",
