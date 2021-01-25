@@ -1,7 +1,5 @@
 <template>
-  <div class="border p-6">
-    Hello!
-  </div>
+  <div></div>
 </template>
 
 <script>

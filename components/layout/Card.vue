@@ -13,26 +13,20 @@
         £{{ data.price }}
       </h4>
       <Scores :data="data" />
-      <button
-        class="w-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-500 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
-        @click="customisePizza"
-      >
-        Customise Pizza
-      </button>
+      <NuxtLink :to="`/menu/${data._id}`">
+        <button
+          class="w-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-500 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
+        >
+          Customise Pizza
+        </button>
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
-  props: ["data"],
-  methods: {
-    ...mapActions(["showModal"]),
-    customisePizza() {
-      this.$store.dispatch("showModal", true);
-    }
-  }
+  props: ["data"]
 };
 </script>
 

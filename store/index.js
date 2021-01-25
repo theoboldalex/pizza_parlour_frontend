@@ -2,14 +2,13 @@ import pizzaData from "../static/pizzaData.json";
 
 export const state = () => ({
   data: pizzaData,
-  cart: [],
-  modalIsVisible: false
+  cart: []
 });
 
-export const mutations = {
-  showModal: (state, payload) => (state.modalIsVisible = payload)
-};
+export const mutations = {};
 
-export const actions = {
-  showModal: (context, payload) => context.commit("showModal", payload)
+export const actions = {};
+
+export const getters = {
+  getPizzaById: state => id => state.data.filter(el => el._id === id)
 };
