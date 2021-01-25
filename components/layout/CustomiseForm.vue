@@ -1,8 +1,9 @@
 <template>
   <form @submit.prevent class="flex flex-col justify-items-center">
     <select
-      v-model="pizza.size"
+      v-model="size"
       class="rounded-lg font-light text-sm m-auto w-full"
+      @change="handleChange"
     >
       <option selected disabled value="">Select your pizza size...</option>
       <option>Small</option>
@@ -22,18 +23,20 @@
 
 <script>
 export default {
-  props: ["data"],
+  props: ["data", "finalPrice"],
   data() {
     return {
-      pizza: {
-        size: "",
-        finalPrice: this.data.price
-      }
+      size: ""
     };
   },
   methods: {
     handleAddToCart() {
-      console.log(this.name, this.pizza, this.finalPrice);
+      // prepare data to add to cart
+      console.log(this.data.name, this.size, this.finalPrice);
+      // emit to parent to close modal
+    },
+    handleChange() {
+      this.$emit("sizeChanged", this.size);
     }
   }
 };

@@ -25,8 +25,13 @@
           </li>
         </ul>
         <Scores :data="data" class="flex justify-center text-2xl" />
-        <p class="text-2xl font-semibold text-center py-2">£{{ data.price }}</p>
-        <CustomiseForm :data="data" class="w-full" />
+        <p class="text-2xl font-semibold text-center py-2">£{{ finalPrice }}</p>
+        <CustomiseForm
+          :data="data"
+          class="w-full"
+          @sizeChanged="sizeChanged"
+          :finalPrice="finalPrice"
+        />
       </div>
     </div>
   </div>
@@ -37,9 +42,31 @@ import CustomiseForm from "./CustomiseForm.vue";
 export default {
   components: { CustomiseForm },
   props: ["data"],
+  data() {
+    return {
+      finalPrice: this.data.price
+    };
+  },
   methods: {
     capitalise(str) {
       return str[0].toUpperCase() + str.slice(1);
+    },
+    sizeChanged(size) {
+      this.calculatePrice(size);
+    },
+    calculatePrice(pizza) {
+      switch (pizza) {
+        case "Small":
+          return (this.finalPrice = this.data.price - 1.0);
+        case "Medium":
+          return (this.finalPrice = this.data.price);
+        case "Large":
+          return (this.finalPrice = this.data.price + 1.0);
+        case "Extra Large":
+          return (this.finalPrice = this.data.price + 2.0);
+        default:
+          break;
+      }
     }
   }
 };
