@@ -11,54 +11,20 @@
         </NuxtLink>
       </div>
 
-      <div class="block mr-4 md:mr-20">
-        <button @click="menuIsOpen = !menuIsOpen" class="focus:outline-none">
-          <i v-if="menuIsOpen" class="fas fa-times fa-2x text-black mr-1"></i>
+      <div class="block flex mr-4 md:mr-20">
+        <NuxtLink to="/menu" class="mr-8"
+          ><i class="fas fa-pizza-slice fa-2x transition duration-500 ease"></i
+        ></NuxtLink>
+
+        <NuxtLink to="/cart">
           <i
-            v-if="!menuIsOpen"
-            class="fas fa-bars fa-2x text-black"
-            :class="cart.length && 'bars'"
+            class="fas fa-shopping-cart fa-2x transition duration-500 ease"
+            :class="cart.length && 'cart'"
             :data-cartCount="cart.length"
           ></i>
-        </button>
+        </NuxtLink>
       </div>
     </nav>
-    <transition name="fade">
-      <div
-        v-if="menuIsOpen"
-        class="py-4 px-2 absolute bg-white w-full shadow md:px-20 z-50"
-      >
-        <ul>
-          <li class="font-semibold px-4 py-2 my-2 hover:bg-gray-200 rounded-lg">
-            <NuxtLink
-              @click.native="menuIsOpen = !menuIsOpen"
-              to="/login"
-              class="block"
-            >
-              Login
-            </NuxtLink>
-          </li>
-          <li class="font-semibold px-4 py-2 my-2 hover:bg-gray-200 rounded-lg">
-            <NuxtLink
-              @click.native="menuIsOpen = !menuIsOpen"
-              to="/menu"
-              class="block"
-            >
-              Pizzas
-            </NuxtLink>
-          </li>
-          <li class="font-semibold px-4 py-2 my-2 hover:bg-gray-200 rounded-lg">
-            <NuxtLink
-              @click.native="menuIsOpen = !menuIsOpen"
-              to="/cart"
-              class="block"
-            >
-              Cart
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
-    </transition>
   </header>
 </template>
 
@@ -87,15 +53,15 @@ export default {
   opacity: 0;
 }
 
-.bars {
+.cart {
   display: grid;
   place-items: center;
 }
 
-.bars::after {
+.cart::after {
+  content: attr(data-cartCount);
   display: grid;
   place-content: center;
-  content: attr(data-cartCount);
   color: #fff;
   font-size: 0.9rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
