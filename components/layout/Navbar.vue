@@ -14,7 +14,12 @@
       <div class="block mr-4 md:mr-20">
         <button @click="menuIsOpen = !menuIsOpen" class="focus:outline-none">
           <i v-if="menuIsOpen" class="fas fa-times fa-2x text-black mr-1"></i>
-          <i v-if="!menuIsOpen" class="fas fa-bars fa-2x text-black"></i>
+          <i
+            v-if="!menuIsOpen"
+            class="fas fa-bars fa-2x text-black"
+            :class="cart.length && 'bars'"
+            :data-cartCount="cart.length"
+          ></i>
         </button>
       </div>
     </nav>
@@ -58,11 +63,16 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
       menuIsOpen: false
     };
+  },
+  computed: {
+    ...mapState(["cart"])
   }
 };
 </script>
@@ -75,5 +85,26 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+
+.bars {
+  display: grid;
+  place-items: center;
+}
+
+.bars::after {
+  display: grid;
+  place-content: center;
+  content: attr(data-cartCount);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin: -5px -5px;
 }
 </style>
