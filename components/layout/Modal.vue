@@ -12,6 +12,10 @@
           class="object-cover md:h-full md:rounded-l-xl md:rounded-t-none rounded-t-xl transform hover:scale-110 transition duration-1000 ease"
         />
       </div>
+      <button
+        class="fas fa-times opacity-50 closeModal"
+        @click="closeModal"
+      ></button>
       <div class="md:w-8/12 p-6 flex flex-col justify-center items-center">
         <h1 class="text-5xl bangers text-center">{{ data.name }}</h1>
         <p class="font-light text-sm text-center">{{ data.description }}</p>
@@ -76,4 +80,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.closeModal {
+  position: fixed;
+  margin: 10px;
+}
+</style>

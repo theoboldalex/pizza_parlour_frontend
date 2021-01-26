@@ -13,12 +13,14 @@
 
       <div class="block flex mr-4 md:mr-20">
         <NuxtLink to="/menu" class="mr-8"
-          ><i class="fas fa-pizza-slice fa-2x transition duration-500 ease"></i
+          ><i
+            class="fas fa-pizza-slice fa-2x transition duration-500 ease text-gray-600 hover:text-gray-700"
+          ></i
         ></NuxtLink>
 
         <NuxtLink to="/cart">
           <i
-            class="fas fa-shopping-cart fa-2x transition duration-500 ease"
+            class="fas fa-shopping-cart fa-2x transition duration-500 ease text-gray-600 hover:text-gray-700"
             :class="cart.length && 'cart'"
             :data-cartCount="cart.length"
           ></i>
@@ -55,7 +57,7 @@ export default {
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #ef4444;
   position: absolute;
   margin: -5px -5px;
 }
