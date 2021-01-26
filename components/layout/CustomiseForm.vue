@@ -13,8 +13,9 @@
     </select>
 
     <button
-      class="m-auto w-full py-2 px-4 bg-blue-400 hover:bg-blue-500 transition duration-500 ease rounded-lg text-white font-light text-sm mt-4 focus:outline-none active:outline-rounded-lg"
+      class="m-auto w-full py-2 px-4 bg-blue-400 hover:bg-blue-500 transition duration-500 ease rounded-lg text-white font-light text-sm mt-4 focus:outline-none active:outline-rounded-lg disabled:opacity-25"
       @click="handleAddToCart"
+      :disabled="!size"
     >
       Add to cart
     </button>
@@ -31,9 +32,14 @@ export default {
   },
   methods: {
     handleAddToCart() {
-      // prepare data to add to cart
-      console.log(this.data.name, this.size, this.finalPrice);
       // emit to parent to close modal
+      this.$emit("addedToCart");
+
+      this.$store.dispatch("addToCart", {
+        pizza: this.data,
+        size: this.size,
+        price: this.finalPrice
+      });
     },
     handleChange() {
       this.$emit("sizeChanged", this.size);

@@ -13,13 +13,6 @@
         £{{ data.price }}
       </h4>
       <Scores :data="data" class="flex-col" />
-      <!-- <NuxtLink :to="`/menu/${data._id}`">
-        <button
-          class="w-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-500 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
-        >
-          Customise Pizza
-        </button>
-      </NuxtLink> -->
       <button
         @click="modalIsHidden = !modalIsHidden"
         class="w-full transition duration-500 ease-in-out bg-blue-400 hover:bg-blue-500 py-2 px-4 rounded-lg text-white font-light mt-4 text-sm focus:outline-none"
@@ -27,7 +20,11 @@
         Customise Pizza
       </button>
 
-      <Modal v-if="!modalIsHidden" :data="data" />
+      <Modal
+        v-if="!modalIsHidden"
+        :data="data"
+        @closeModal="modalIsHidden = !modalIsHidden"
+      />
     </div>
   </div>
 </template>
@@ -39,6 +36,15 @@ export default {
     return {
       modalIsHidden: true
     };
+  },
+  watch: {
+    modalIsHidden: function() {
+      if (!this.modalIsHidden) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "scroll";
+      }
+    }
   }
 };
 </script>

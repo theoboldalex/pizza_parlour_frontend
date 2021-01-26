@@ -22,11 +22,11 @@
           placeholder="********"
         />
         <div class="flex items-center">
-          <input type="checkbox" class="mr-2" />
+          <input type="checkbox" class="mr-2 border rounded-lg" />
           <label for="remember">Accept terms & conditions</label>
         </div>
         <div class="flex items-center">
-          <input type="checkbox" class="mr-2" />
+          <input type="checkbox" class="mr-2 border rounded-lg" />
           <label for="remember">Send me deals</label>
         </div>
         <button

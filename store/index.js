@@ -5,8 +5,14 @@ export const state = () => ({
   cart: []
 });
 
-export const mutations = {};
+export const mutations = {
+  addToCart: (state, payload) => state.cart.push(payload)
+};
 
-export const actions = {};
+export const actions = {
+  addToCart: (context, payload) => {
+    context.commit("addToCart", payload);
+  }
+};
 
 export const getters = {};

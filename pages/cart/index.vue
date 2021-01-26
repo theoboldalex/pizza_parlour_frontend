@@ -5,7 +5,12 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState(["cart"])
+  }
+};
 </script>
 
 <style scoped></style>

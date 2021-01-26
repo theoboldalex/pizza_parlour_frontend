@@ -16,7 +16,7 @@
           placeholder="********"
         />
         <div class="flex items-center">
-          <input type="checkbox" class="mr-2" />
+          <input type="checkbox" class="mr-2 border rounded-lg" />
           <label for="remember">remember me</label>
         </div>
         <button

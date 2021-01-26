@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute inset-0 bg-black bg-opacity-50 z-20 flex justify-center items-center"
+    class="fixed inset-0 bg-black bg-opacity-50 z-20 flex justify-center items-center"
   >
     <div
       class="md:flex bg-gray-200 shadow-lg rounded-xl z-50 md:mx-20 w-10/12 md:w-8/12 overflow-hidden"
@@ -30,6 +30,7 @@
           :data="data"
           class="w-full"
           @sizeChanged="sizeChanged"
+          @addedToCart="closeModal"
           :finalPrice="finalPrice"
         />
       </div>
@@ -67,6 +68,9 @@ export default {
         default:
           break;
       }
+    },
+    closeModal() {
+      this.$emit("closeModal");
     }
   }
 };
