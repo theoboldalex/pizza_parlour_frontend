@@ -25,22 +25,39 @@
         <h1 class="sm:text-2xl">Size: {{ pizza.size }}</h1>
       </div>
       <div class="w-1/12 flex justify-center items-center">
-        <button @click="deletePizza">
+        <button @click="deletePizza(index)">
           <i class="fas fa-trash-alt opacity-50"></i>
         </button>
       </div>
+    </div>
+
+    <hr class="mx-4 md:mx-20 my-6" />
+
+    <div class="mx-4 md:mx-20 my-6">
+      <h1 class="font-semibold text-3xl">
+        Total:<span class="ml-2 font-light text-gray-600"
+          >£{{ calculateTotal }}</span
+        >
+      </h1>
     </div>
   </section>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
+
 export default {
   computed: {
-    ...mapState(["cart"])
+    ...mapState(["cart"]),
+    calculateTotal() {
+      return "0.00";
+    }
   },
   methods: {
-    deletePizza() {}
+    ...mapActions(["removeFromCart"]),
+    deletePizza(index) {
+      this.$store.dispatch("removeFromCart", index);
+    }
   }
 };
 </script>
