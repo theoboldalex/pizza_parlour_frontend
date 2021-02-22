@@ -11,7 +11,7 @@
         </NuxtLink>
       </div>
 
-      <div class="block flex mr-4 md:mr-20">
+      <div class="flex mr-4 md:mr-20">
         <NuxtLink to="/menu" class="mr-8"
           ><i
             class="fas fa-pizza-slice fa-2x transition duration-500 ease text-gray-600 hover:text-gray-700"
