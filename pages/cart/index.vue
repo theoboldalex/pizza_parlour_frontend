@@ -33,12 +33,19 @@
 
     <hr class="mx-4 md:mx-20 my-6" />
 
-    <div class="mx-4 md:mx-20 my-6">
+    <div class="mx-4 md:mx-20 my-6" v-if="cart.length">
       <h1 class="font-semibold text-3xl">
         Total:<span class="ml-2 font-light text-gray-600"
           >£{{ formatPrice(calculateTotal) }}</span
         >
       </h1>
+      <NuxtLink to="/checkout">
+        <button
+          class="m-auto w-full md:w-1/4 py-2 px-4 bg-blue-400 hover:bg-blue-500 transition duration-500 ease rounded-lg text-white font-light text-sm mt-4 focus:outline-none active:outline-rounded-lg disabled:opacity-25"
+        >
+          Checkout
+        </button>
+      </NuxtLink>
     </div>
   </section>
 </template>
@@ -62,6 +69,9 @@ export default {
       let val = (value / 100).toFixed(2);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
+  },
+  mounted() {
+    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
   }
 };
 </script>

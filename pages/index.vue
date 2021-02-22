@@ -22,7 +22,10 @@
 <script>
 import Footer from "../components/layout/Footer.vue";
 export default {
-  components: { Footer }
+  components: { Footer },
+  mounted() {
+    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
+  }
 };
 </script>
 

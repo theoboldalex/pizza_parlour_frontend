@@ -20,6 +20,9 @@ import { mapState } from "vuex";
 export default {
   computed: {
     ...mapState(["data"])
+  },
+  mounted() {
+    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
   }
 };
 </script>

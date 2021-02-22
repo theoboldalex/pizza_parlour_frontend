@@ -40,6 +40,7 @@ export default {
         size: this.size,
         price: this.finalPrice
       });
+      localStorage.setItem("cart", JSON.stringify(this.$store.state.cart));
     },
     handleChange() {
       this.$emit("sizeChanged", this.size);
