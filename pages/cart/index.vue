@@ -36,7 +36,7 @@
     <div class="mx-4 md:mx-20 my-6">
       <h1 class="font-semibold text-3xl">
         Total:<span class="ml-2 font-light text-gray-600"
-          >£{{ calculateTotal }}</span
+          >£{{ formatPrice(calculateTotal) }}</span
         >
       </h1>
     </div>
@@ -50,13 +50,17 @@ export default {
   computed: {
     ...mapState(["cart"]),
     calculateTotal() {
-      return "0.00";
+      return 399;
     }
   },
   methods: {
     ...mapActions(["removeFromCart"]),
     deletePizza(index) {
       this.$store.dispatch("removeFromCart", index);
+    },
+    formatPrice(value) {
+      let val = (value / 100).toFixed(2);
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
   }
 };
