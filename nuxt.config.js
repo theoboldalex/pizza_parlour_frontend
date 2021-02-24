@@ -18,7 +18,8 @@ export default {
         href:
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
       }
-    ]
+    ],
+    script: [{ src: "https://js.stripe.com/v3/" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -33,7 +34,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/dotenv"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
