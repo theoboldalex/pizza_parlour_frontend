@@ -61,9 +61,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["removeFromCart"]),
+    ...mapActions(["removeFromCart", "setCart"]),
     deletePizza(index) {
       this.$store.dispatch("removeFromCart", index);
+      localStorage.setItem("cart", JSON.stringify(this.$store.state.cart));
     },
     formatPrice(value) {
       let val = (value / 100).toFixed(2);
@@ -71,7 +72,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
+    this.$store.dispatch("setCart", JSON.parse(localStorage.getItem("cart")));
   }
 };
 </script>

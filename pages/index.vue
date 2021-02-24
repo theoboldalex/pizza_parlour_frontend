@@ -21,10 +21,14 @@
 
 <script>
 import Footer from "../components/layout/Footer.vue";
+import { mapActions } from "vuex";
 export default {
   components: { Footer },
+  computed: {
+    ...mapActions(["setCart"])
+  },
   mounted() {
-    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
+    this.$store.dispatch("setCart", JSON.parse(localStorage.getItem("cart")));
   }
 };
 </script>

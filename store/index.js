@@ -7,7 +7,8 @@ export const state = () => ({
 
 export const mutations = {
   addToCart: (state, payload) => state.cart.push(payload),
-  removeFromCart: (state, payload) => state.cart.splice(payload, 1)
+  removeFromCart: (state, payload) => state.cart.splice(payload, 1),
+  setCart: (state, payload) => (state.cart = payload)
 };
 
 export const actions = {
@@ -16,6 +17,9 @@ export const actions = {
   },
   removeFromCart: (context, payload) => {
     context.commit("removeFromCart", payload);
+  },
+  setCart: (context, payload) => {
+    context.commit("setCart", payload);
   }
 };
 

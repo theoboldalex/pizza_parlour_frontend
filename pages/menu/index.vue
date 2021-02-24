@@ -15,14 +15,15 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   computed: {
-    ...mapState(["data"])
+    ...mapState(["data"]),
+    ...mapActions(["setCart"])
   },
   mounted() {
-    this.$store.state.cart = JSON.parse(localStorage.getItem("cart"));
+    this.$store.dispatch("setCart", JSON.parse(localStorage.getItem("cart")));
   }
 };
 </script>
