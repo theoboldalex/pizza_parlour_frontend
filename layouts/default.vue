@@ -4,16 +4,16 @@
     <main>
       <Nuxt />
     </main>
-    <footer>
-      <!-- Footer -->
-    </footer>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/layout/Navbar";
-
-export default {};
+export default {
+  components: {
+    Navbar
+  }
+};
 </script>
 
 <style>

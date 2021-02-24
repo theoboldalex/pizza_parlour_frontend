@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mb-20">
     <h1 class="hero-text text-red-500 text-shadow-lg page-heading text-center">
       Your<span class="ml-4 hero-text text-blue-400 text-shadow-lg page-heading"
         >Cart</span
@@ -57,7 +57,14 @@ export default {
   computed: {
     ...mapState(["cart"]),
     calculateTotal() {
-      return 399;
+      if (this.$store.state.cart.length) {
+        let temp = [];
+        this.$store.state.cart.map(pizza => {
+          temp.push(pizza.price * 100);
+        });
+        return temp.reduce((a, b) => a + b);
+      }
+      return 0.0;
     }
   },
   methods: {

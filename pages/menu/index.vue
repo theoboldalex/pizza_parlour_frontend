@@ -33,5 +33,6 @@ export default {
   min-height: 90vh;
   display: grid;
   place-items: center;
+  margin-bottom: 40px;
 }
 </style>
